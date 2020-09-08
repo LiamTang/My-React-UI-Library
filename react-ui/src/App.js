@@ -1,24 +1,19 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+
+import "./App.css";
+import Button from "./Button";
+import useColorSwitch from "./useColorSwitch";
 
 function App() {
+  const [color, handleButton1] = useColorSwitch();
+  const [color2, handleButton2] = useColorSwitch("#0000ff", "#ff00ff");
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <p style={{ color: color }}>this is a text</p>
+      <Button width="120px" onClick={handleButton1} label=" click me"></Button>
+      <p style={{ color: color2 }}>this is a text</p>
+      <Button onClick={handleButton2} label=" click me"></Button>
     </div>
   );
 }
