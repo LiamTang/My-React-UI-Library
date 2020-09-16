@@ -6,10 +6,8 @@ import face2 from "stories/assets/images/face-male-2.jpg";
 import face3 from "stories/assets/images/face-male-3.jpg";
 import face4 from "stories/assets/images/face-male-4.jpg";
 
-import "story.css";
-
 export default {
-  title: "Avatar",
+  title: "UI Component/Avatar",
   component: Avatar,
 };
 
