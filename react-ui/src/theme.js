@@ -1,3 +1,5 @@
+/** @format */
+
 export default {
 	primaryColor: "#4f9dde",
 	green: "#34D859",
@@ -7,6 +9,10 @@ export default {
 	grey2: "rgba(241,237,237,0.3)",
 	grey3: "rgba(24,28,47,0.3)",
 	greyDark: "#181c2f",
+
+	background: "white",
+	inactiveColor: "rgba(41, 47, 76, 0.3)",
+	inactiveColorDark: "white",
 
 	xxsmall: "0.8rem",
 	xsmall: "1rem",
