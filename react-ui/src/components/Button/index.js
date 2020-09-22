@@ -30,6 +30,7 @@ Button.propTypes = {
 	type: PropTypes.oneOf(["primary"]),
 	shape: PropTypes.oneOf(["circle", "rect"]),
 	size: PropTypes.string,
+	bgColor: PropTypes.string,
 };
 
 export default Button;

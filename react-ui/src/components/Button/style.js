@@ -28,13 +28,13 @@ const StyledButton = styled.button`
 	outline: none;
 	cursor: pointer;
 	box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
-	${({ shape }) => shapeVariants[shape]}
-	${({ type }) => typeVariants[type]}
-	${({ bgColor }) => `background-color: ${bgColor}`}
+	${({ shape }) => shapeVariants[shape]};
+	${({ type }) => typeVariants[type]};
+	${({ bgColor }) => `background-color: ${bgColor}`};
 
 	transform: scale(1);
 	transition: 0.4s;
-	&:hover{
+	&:hover {
 		transform: scale(1.1);
 		box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.35);
 	}

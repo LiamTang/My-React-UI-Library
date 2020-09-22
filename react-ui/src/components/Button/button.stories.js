@@ -12,6 +12,12 @@ export default {
 
 export const ReactButton = () => <Button shape="rect">Default</Button>;
 
+export const ReactRedButton = () => (
+	<Button shape="rect" bgColor="red">
+		Default
+	</Button>
+);
+
 export const CircleButton = () => (
 	<Button>
 		<Icon icon={Plus} width={12} height={12} />
