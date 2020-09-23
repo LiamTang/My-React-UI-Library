@@ -8,7 +8,8 @@ import StyledProfile, {
 	AlbumSection,
 	AlbumTitle,
 	Album,
-	Photo,CloseIcon
+	Photo,
+	CloseIcon,
 } from "./style";
 import "styled-components/macro";
 import Avatar from "components/Avatar";
@@ -32,8 +33,8 @@ import { ReactComponent as Cross } from "stories/assets/icons/cross.svg";
 
 function Profile({ children, ...rest }) {
 	return (
-    <StyledProfile {...rest}>
-      <CloseIcon icon={Cross} />
+		<StyledProfile {...rest}>
+			<CloseIcon icon={Cross} />
 			<Avatar
 				css={`
 					margin: 26px 0;

@@ -1,3 +1,5 @@
+/** @format */
+
 import React from "react";
 import Select from ".";
 import Option from "components/Option";
@@ -12,3 +14,12 @@ export const Default = () => (
 		<Option>Option 2</Option>
 	</Select>
 );
+
+export const FormSelect = () => {
+	return (
+		<Select type="form">
+			<Option>Sydney</Option>
+			<Option>Melbourne</Option>
+		</Select>
+	);
+};

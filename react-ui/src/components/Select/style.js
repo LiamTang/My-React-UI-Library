@@ -1,5 +1,14 @@
-import styled from "styled-components";
+/** @format */
+
+import styled, { css } from "styled-components";
 import CaretDown from "stories/assets/icons/caret_down.svg";
+import CaretDown2 from "stories/assets/icons/caretDown2.svg";
+
+const typeVariants = {
+	form: css`
+		background-image: url(${CaretDown2});
+	`,
+};
 
 const StyledSelect = styled.select`
 	appearance: none;
@@ -12,6 +21,7 @@ const StyledSelect = styled.select`
 	font-size: ${({ theme }) => theme.normal};
 	color: ${({ theme }) => theme.greyDark};
 
+	${({ type }) => type && typeVariants[type]}
 	::-ms-expand {
 		display: none;
 	}
