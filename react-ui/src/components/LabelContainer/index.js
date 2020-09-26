@@ -8,7 +8,7 @@ import Text from "components/Text";
 function LabelContainer({ children, label, ...rest }) {
 	return (
 		<StyledLabelContainer {...rest}>
-			{label && <Text style={{ marginBottom: "8px" }}>{label}</Text>}
+			{label && <Text style={{ marginBottom: "8px" }}>{label}: </Text>}
 			{children}
 		</StyledLabelContainer>
 	);

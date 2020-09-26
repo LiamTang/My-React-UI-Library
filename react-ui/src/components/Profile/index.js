@@ -30,20 +30,50 @@ import photo1 from "stories/assets/images/photo1.jpg";
 import photo2 from "stories/assets/images/photo2.jpg";
 import photo3 from "stories/assets/images/photo3.jpg";
 import { ReactComponent as Cross } from "stories/assets/icons/cross.svg";
+import Button from "components/Button";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPen } from "@fortawesome/free-solid-svg-icons";
 
-function Profile({ children, ...rest }) {
+function Profile({
+	children,
+	showEditBtn,
+	showCloseIcon = true,
+	onEdit,
+	status,
+	...rest
+}) {
 	return (
 		<StyledProfile {...rest}>
-			<CloseIcon icon={Cross} />
+			{showCloseIcon && <CloseIcon icon={Cross} />}
 			<Avatar
 				css={`
 					margin: 26px 0;
+					grid-area: 1/1/3/2;
 				`}
 				src={face1}
 				size="160px"
-				status="online"
+				status={status}
 				statusIconSize="25px"
 			/>
+			{showEditBtn && (
+				<Button
+					size="52px"
+					onClick={onEdit}
+					css={`
+						grid-area: 1/1/3/2;
+						align-self: end;
+						margin-left: 100px;
+						z-index: 10;
+					`}
+				>
+					<FontAwesomeIcon
+						css={`
+							font-size: 24px;
+						`}
+						icon={faPen}
+					/>
+				</Button>
+			)}
 			<Paragraph
 				size="xlarge"
 				css={`

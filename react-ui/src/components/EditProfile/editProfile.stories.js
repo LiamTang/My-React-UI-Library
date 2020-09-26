@@ -1,9 +1,11 @@
+/** @format */
+
 import React from "react";
 import EditProfile from ".";
 
 export default {
-  title: "EditProfile",
-  component: EditProfile
+	title: "Page Component/EditProfile",
+	component: EditProfile,
 };
 
-export const Default = () => <EditProfile>Default</EditProfile>;
+export const Default = () => <EditProfile />;
