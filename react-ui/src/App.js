@@ -1,16 +1,17 @@
 /** @format */
 
-import React, { useState } from "react";
-
+import ChatApp from "components/ChatApp";
+import React from "react";
+import { ThemeProvider } from "styled-components";
+import theme from "./theme";
 import "./App.css";
-import Button from "./Button";
-import useColorSwitch from "./useColorSwitch";
 
 function App() {
-	const [color, handleButton1] = useColorSwitch();
-	const [color2, handleButton2] = useColorSwitch("#0000ff", "#ff00ff");
-
-	return <div></div>;
+	return (
+		<ThemeProvider theme={theme}>
+			<ChatApp />
+		</ThemeProvider>
+	);
 }
 
 export default App;
