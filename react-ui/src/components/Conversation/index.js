@@ -8,16 +8,39 @@ import ChatBubble from "components/ChatBubble";
 import VoiceMessage from "components/VoiceMessage";
 import Emoji from "components/Emoji";
 import Footer from "components/Footer";
+import { useSpring } from "react-spring";
 
 function Conversation({ onVideoClick, onAvatarClick, children, ...rest }) {
+	const tBarAnimeProps = useSpring({
+		opacity: 1,
+		transform: "translate3d(0px,0px,0px)",
+		from: { opacity: 0, transform: "translate3d(0px, -50px,0px)" },
+		delay: 500,
+	});
+
+	const convsAnimeProps = useSpring({
+		opacity: 1,
+		transform: "translate3d(0px,0px,0px)",
+		from: { opacity: 0, transform: "translate3d(50px, 0px,0px)" },
+		delay: 800,
+	});
+
+	const ftAnimeProps = useSpring({
+		opacity: 1,
+		transform: "translate3d(0px,0px,0px)",
+		from: { opacity: 0, transform: "translate3d(0px, 50px,0px)" },
+		delay: 950,
+	});
+
 	return (
 		<StyledConversation {...rest}>
 			<TitleBar
 				style={{ width: "100%" }}
 				onAvatarClick={onAvatarClick}
 				onVideoClick={onVideoClick}
+				animeProps={tBarAnimeProps}
 			/>
-			<Conversations>
+			<Conversations style={convsAnimeProps}>
 				<ChatBubble time="yesterday 14:36">
 					Hi Liam, what are you doing
 				</ChatBubble>
@@ -32,7 +55,7 @@ function Conversation({ onVideoClick, onAvatarClick, children, ...rest }) {
 					<Emoji label="smile"></Emoji>
 				</MyChatBubble>
 			</Conversations>
-			<Footer />
+			<Footer animeProps={ftAnimeProps} />
 		</StyledConversation>
 	);
 }

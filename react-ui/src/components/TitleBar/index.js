@@ -14,9 +14,16 @@ import { ReactComponent as Options } from "stories/assets/icons/options.svg";
 import Dropdown from "components/Dropdown";
 import { DropdownItem } from "components/Dropdown/style";
 
-function TitleBar({ onVideoClick, onAvatarClick, children, ...rest }) {
+function TitleBar({
+	animeProps,
+	style,
+	onVideoClick,
+	onAvatarClick,
+	children,
+	...rest
+}) {
 	return (
-		<StyledTitleBar {...rest}>
+		<StyledTitleBar style={{ ...style, ...animeProps }} {...rest}>
 			<Avatar status="offline" src={face} onClick={onAvatarClick} />
 			<Title>
 				<Paragraph size="large"> Kevin Zheng</Paragraph>

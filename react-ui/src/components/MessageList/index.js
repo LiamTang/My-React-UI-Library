@@ -3,19 +3,17 @@
 import React from "react";
 import PropTypes from "prop-types";
 import StyledMessageList, { ChatList } from "./style";
-import Filter from "components/Filter";
-import Select from "components/Select";
-import Option from "components/Option";
-import Button from "components/Button";
-import Icon from "components/Icon";
-import { ReactComponent as Plus } from "stories/assets/icons/plus.svg";
-import Input from "components/Input";
+
 import MessageCard from "components/MessageCard";
 import face1 from "stories/assets/images/face-male-1.jpg";
 import {} from "@fortawesome/free-solid-svg-icons";
 import FilterList from "components/FilterList";
+import { animated } from "react-spring";
+import useStaggeredList from "hooks/useStaggeredList";
+import messageData from "data/message";
 
 function MessageList({ children, ...rest }) {
+	const trailAnimes = useStaggeredList(6);
 	return (
 		<StyledMessageList {...rest}>
 			<FilterList
@@ -23,19 +21,24 @@ function MessageList({ children, ...rest }) {
 				actionLabel="create a chat"
 			>
 				<ChatList>
-					{[1, 2, 3, 4, 5, 6].map((_, index) => (
-						<MessageCard
-							key={index}
-							active={index === 3}
-							replied={index % 3 === 0}
-							avatarSrc={face1}
-							name="Liam"
-							avatarStatus="online"
-							statusText="online"
-							time=" 3hr ago"
-							message="hello this is liam, nice to meet you"
-							unreadCount={2}
-						/>
+					{messageData.map((message, index) => (
+						<animated.div
+							key={message.id}
+							style={trailAnimes[index]}
+						>
+							<MessageCard
+								key={message.id}
+								active={index === 3}
+								replied={message.replied}
+								avatarSrc={message.avatarSrc}
+								name={message.name}
+								avatarStatus={message.status}
+								statusText={message.statusText}
+								time={message.time}
+								message={message.message}
+								unreadCount={message.unreadCount}
+							/>
+						</animated.div>
 					))}
 				</ChatList>
 			</FilterList>

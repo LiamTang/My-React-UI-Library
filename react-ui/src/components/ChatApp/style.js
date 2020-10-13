@@ -4,6 +4,9 @@ import styled, { css } from "styled-components";
 
 const Nav = styled.nav`
 	flex-shrink: 0;
+
+	position: relative;
+	z-index: 100;
 `;
 
 const Sidebar = styled.aside`
@@ -12,6 +15,14 @@ const Sidebar = styled.aside`
 	height: 100vh;
 	flex: 1;
 	background: ${({ theme }) => theme.gradientGrey};
+
+	position: relative;
+	z-index: 50;
+	> div {
+		will-change: transform, opacity;
+		position: absolute;
+		width: 100%;
+	}
 `;
 const Content = styled.main`
 	flex: 2;
@@ -21,10 +32,16 @@ const Content = styled.main`
 const Drawer = styled.div`
 	max-width: 310px;
 	width: 0;
+
+	transform: translateX(200px);
+	transition: transform 0.4s;
+	will-change: width, transform; //当width transform 改变时，告诉浏览器以提高性能
+
 	${({ show }) =>
 		show &&
 		css`
-			width: 310px;
+			width: initial;
+			transform: translateX(0px);
 		`}
 `;
 

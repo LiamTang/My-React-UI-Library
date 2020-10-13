@@ -1,6 +1,7 @@
 /** @format */
 
 import StyledIcon from "components/Icon/style";
+import { animated } from "react-spring";
 /** @format */
 
 import styled from "styled-components";
@@ -18,7 +19,7 @@ const Actions = styled.div`
 	}
 `;
 
-const StyledTitleBar = styled.div`
+const StyledTitleBar = styled(animated.div)`
 	display: grid;
 	grid-template-columns: 62px 1fr 112px;
 	align-items: center;

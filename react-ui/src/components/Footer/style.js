@@ -1,5 +1,6 @@
 /** @format */
 
+import { animated } from "react-spring";
 import styled from "styled-components";
 
 const IconContainer = styled.div`
@@ -19,7 +20,7 @@ const StyledPopoverContent = styled.div`
 	}
 `;
 
-const StyledFooter = styled.footer`
+const StyledFooter = styled(animated.footer)`
 	padding: 12px 30px;
 	width: 100%;
 `;
