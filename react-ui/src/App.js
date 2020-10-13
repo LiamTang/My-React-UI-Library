@@ -5,12 +5,15 @@ import React from "react";
 import { ThemeProvider } from "styled-components";
 import theme from "./theme";
 import "./App.css";
+import { BrowserRouter as Router } from "react-router-dom";
 
 function App() {
 	return (
-		<ThemeProvider theme={theme}>
-			<ChatApp />
-		</ThemeProvider>
+		<Router>
+			<ThemeProvider theme={theme}>
+				<ChatApp />
+			</ThemeProvider>
+		</Router>
 	);
 }
 
