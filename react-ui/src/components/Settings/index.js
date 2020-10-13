@@ -12,6 +12,8 @@ import Switch from "components/Switch";
 import Icon from "components/Icon";
 import { ReactComponent as ArrowMenuRight } from "stories/assets/icons/arrowMenuRight.svg";
 import Seperate from "components/Seperate";
+import "styled-components/macro";
+import { Link } from "react-router-dom";
 
 function Settings({ children, ...rest }) {
 	return (
@@ -30,10 +32,18 @@ function Settings({ children, ...rest }) {
 				<SettingsItem label="Voice message" />
 				<SettingsItem label="Video message" />
 				<SettingsItem label="Voice" />
-				<SettingsItem
-					label="Check blocked friends in the list"
-					type="menu"
-				/>
+				<Link
+					to={`/settings/blocked`}
+					css={`
+						text-decoration: none;
+						color: inherit;
+					`}
+				>
+					<SettingsItem
+						label="Check blocked friends in the list"
+						type="menu"
+					/>
+				</Link>
 			</SettingsGroup>
 		</StyledSettings>
 	);

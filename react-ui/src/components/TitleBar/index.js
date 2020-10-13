@@ -14,10 +14,10 @@ import { ReactComponent as Options } from "stories/assets/icons/options.svg";
 import Dropdown from "components/Dropdown";
 import { DropdownItem } from "components/Dropdown/style";
 
-function TitleBar({ children, ...rest }) {
+function TitleBar({ onVideoClick, onAvatarClick, children, ...rest }) {
 	return (
 		<StyledTitleBar {...rest}>
-			<Avatar status="offline" src={face} />
+			<Avatar status="offline" src={face} onClick={onAvatarClick} />
 			<Title>
 				<Paragraph size="large"> Kevin Zheng</Paragraph>
 				<Paragraph type="secondary">
@@ -27,7 +27,7 @@ function TitleBar({ children, ...rest }) {
 			</Title>
 			<Actions>
 				<Icon opacity={0.3} icon={Call} />
-				<Icon opacity={0.3} icon={Camera} />
+				<Icon opacity={0.3} icon={Camera} onClick={onVideoClick} />
 				<Dropdown
 					content={
 						<Fragment>

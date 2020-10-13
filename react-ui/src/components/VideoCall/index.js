@@ -22,7 +22,7 @@ import {
 import Avatar from "components/Avatar";
 import Paragraph from "components/Paragraph";
 
-function VideoCall({ children, ...rest }) {
+function VideoCall({ onHangupClick, children, ...rest }) {
 	const [fullScreen, setFullScreen] = useState(true);
 
 	if (!fullScreen) {
@@ -75,7 +75,10 @@ function VideoCall({ children, ...rest }) {
 					<FontAwesomeIcon icon={faMicrophone} />
 				</Action>
 				<Action type="hangup">
-					<FontAwesomeIcon icon={faPhoneSlash} />
+					<FontAwesomeIcon
+						icon={faPhoneSlash}
+						onClick={onHangupClick}
+					/>
 				</Action>
 				<Action>
 					<FontAwesomeIcon icon={faVolumeMute} />

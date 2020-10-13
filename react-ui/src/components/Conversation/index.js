@@ -9,10 +9,14 @@ import VoiceMessage from "components/VoiceMessage";
 import Emoji from "components/Emoji";
 import Footer from "components/Footer";
 
-function Conversation({ children, ...rest }) {
+function Conversation({ onVideoClick, onAvatarClick, children, ...rest }) {
 	return (
 		<StyledConversation {...rest}>
-			<TitleBar style={{ width: "100%" }} />
+			<TitleBar
+				style={{ width: "100%" }}
+				onAvatarClick={onAvatarClick}
+				onVideoClick={onVideoClick}
+			/>
 			<Conversations>
 				<ChatBubble time="yesterday 14:36">
 					Hi Liam, what are you doing

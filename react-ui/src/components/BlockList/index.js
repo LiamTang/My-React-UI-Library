@@ -16,8 +16,11 @@ import { ReactComponent as closeCircle } from "stories/assets/icons/closeCircle.
 import "styled-components/macro";
 import Text from "components/Text";
 import face1 from "stories/assets/images/face-male-1.jpg";
+import { useHistory } from "react-router-dom";
 
 function BlockList({ children, ...rest }) {
+	const history = useHistory();
+
 	return (
 		<StyledBlockList {...rest}>
 			<SettingsMenu>
@@ -26,6 +29,7 @@ function BlockList({ children, ...rest }) {
 					css={`
 						cursor: pointer;
 					`}
+					onClick={() => history.goBack()}
 				/>
 				<Text size="xxlarge">Blocked Friends</Text>
 			</SettingsMenu>
